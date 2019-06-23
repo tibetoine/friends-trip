@@ -12,7 +12,10 @@ import '@/firebase/authentication'
 import '@/misc/handle-apple-install-prompt'
 import 'pwacompat'
 
-Vue.use(Vuetify)
+Vue.use(Vuetify, {
+  iconfont: 'md'
+})
+
 Vue.config.productionTip = false
 
 new Vue({
