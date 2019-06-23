@@ -18,7 +18,7 @@
           class="nav-item logout-item"
           @click="logout"
         >
-          <a>Logout</a>
+          <a>Logout Test</a>
         </div>
         <div v-if="!networkOnLine" class="nav-item offline-label">Offline</div>
       </nav>
