@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Head from 'vue-head'
 import Home from '@/views/Home'
+import News from '@/views/News'
 import CheckLogin from '@/views/CheckLogin'
 import { isNil } from 'lodash'
 import store from '@/store'
@@ -20,6 +21,14 @@ const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
+    {
+      path: '/news',
+      name: 'news',
+      component: News,
+      meta: {
+        authNotRequired: true
+      }
+    },
     {
       path: '/home',
       name: 'home',
