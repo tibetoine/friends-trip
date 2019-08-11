@@ -1,6 +1,5 @@
 {
   "projects": {
-    "default": "bento-starter",
-    "ftrip": "friends-trip-863db"
+    "default": "friends-trip-863db"
   }
 }
