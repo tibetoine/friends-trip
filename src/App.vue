@@ -1,47 +1,25 @@
 <template>
   <div id="app">
-    <v-app id="inspire">
-      <v-navigation-drawer
-        v-model="drawer"
-        fixed
-        :clipped="$vuetify.breakpoint.mdAndUp"
-        app
-      >
+    <v-app>
+      <v-navigation-drawer v-model="drawer" app>
         <v-list dense>
           <template v-for="item in items">
-            <v-list-tile :key="item.text" href="" :to="item.path">
-              <v-list-tile-action>
+            <v-list-item :key="item.text" href="" :to="item.path">
+              <v-list-item-action>
                 <v-icon>{{ item.icon }}</v-icon>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>
                   {{ item.text }}
-                </v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
           </template>
         </v-list>
       </v-navigation-drawer>
-      <v-toolbar
-        color="blue darken-3"
-        dark
-        app
-        :clipped-left="$vuetify.breakpoint.mdAndUp"
-        fixed
-      >
-        <v-toolbar-title style="width: 300px" class="ml-0 pl-3">
-          <v-toolbar-side-icon
-            @click.stop="drawer = !drawer"
-          ></v-toolbar-side-icon>
-          <span class="hidden-sm-and-down">Google Contacts</span>
-        </v-toolbar-title>
-        <v-text-field
-          flat
-          solo-inverted
-          prepend-icon="search"
-          label="Search"
-          class="hidden-sm-and-down"
-        ></v-text-field>
+      <v-app-bar app color="indigo" dark>
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-toolbar-title>Friends Trip</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn icon>
           <v-icon>apps</v-icon>
@@ -49,7 +27,7 @@
         <v-btn icon>
           <v-icon>notifications</v-icon>
         </v-btn>
-      </v-toolbar>
+      </v-app-bar>
 
       <router-view></router-view>
     </v-app>
@@ -67,28 +45,28 @@ export default {
     dialog: false,
     drawer: null,
     items: [
-      { icon: 'not_listed_location', text: 'C où?', path: '/C où?' },
+      { icon: 'not_listed_location', text: 'C où?', path: '/where' },
       { icon: 'restaurant', text: 'Menus', path: '/menus' },
       {
         icon: 'local_grocery_store',
         text: 'Les courses',
-        path: '/les courses'
+        path: '/shopping'
       },
-      { icon: 'forum', text: 'Blabla...', path: '/blabla...' },
+      { icon: 'forum', text: 'Blabla...', path: '/discuss' },
       {
         icon: 'add_a_photo',
         text: 'On partage tout',
-        path: '/on partage tout'
+        path: '/sharing'
       },
-      { icon: 'attach_money', text: 'Les sous', path: '/les sous' },
-      { icon: 'person_add', text: 'Invités', path: '/invités' },
+      { icon: 'attach_money', text: 'Les sous', path: '/money' },
+      { icon: 'person_add', text: 'Invités', path: '/guests' },
       {
         icon: 'assignment',
         text: 'Qui ramène quoi?',
-        path: '/Qui ramène quoi?'
+        path: '/taking'
       },
-      { icon: 'beach_access', text: 'Activités', path: '/activités' },
-      { icon: 'hotel', text: 'On dort où?', path: '/on dort où?' },
+      { icon: 'beach_access', text: 'Activités', path: '/activies' },
+      { icon: 'hotel', text: 'On dort où?', path: '/sleeping' },
       { icon: 'help', text: 'Aide', path: '/help' }
     ]
   })

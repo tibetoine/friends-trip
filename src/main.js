@@ -1,7 +1,5 @@
 import Vue from 'vue'
 
-import Vuetify from 'vuetify/lib'
-import 'vuetify/src/stylus/app.styl'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -11,15 +9,13 @@ import '@/firebase/init'
 import '@/firebase/authentication'
 import '@/misc/handle-apple-install-prompt'
 import 'pwacompat'
-
-Vue.use(Vuetify, {
-  iconfont: 'md'
-})
+import vuetify from './plugins/vuetify'
 
 Vue.config.productionTip = false
 
 new Vue({
   router,
   store,
+  vuetify,
   render: h => h(App)
 }).$mount('#app')

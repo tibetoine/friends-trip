@@ -52,6 +52,7 @@ export default {
   watch: {
     user: {
       handler(user) {
+        console.log('The user : ', user)
         if (!isNil(user)) {
           const redirectUrl = isNil(this.$route.query.redirectUrl)
             ? '/products'
