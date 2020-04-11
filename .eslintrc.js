@@ -16,7 +16,8 @@ module.exports = {
     'vue/require-default-prop': 'off',
     'import/no-unresolved': 'off',
     'no-var': 2,
-    'prefer-const': 2
+    'prefer-const': 2,
+    ignorePropertyModificationsFor: { props: false }
   },
   parserOptions: {
     parser: 'babel-eslint'

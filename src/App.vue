@@ -2,17 +2,27 @@
   <div id="app">
     <v-app>
       <v-navigation-drawer v-model="drawer" app>
-        <v-list dense>
+        <v-list-item>
+          <v-list-item-avatar>
+            <v-img src="https://randomuser.me/api/portraits/men/85.jpg"></v-img>
+          </v-list-item-avatar>
+
+          <v-list-item-title>User Name</v-list-item-title>
+          <v-btn icon @click.stop="displayMenu = !displayMenu">
+            <v-icon>keyboard_arrow_down</v-icon>
+          </v-btn>
+        </v-list-item>
+        <v-divider></v-divider>
+        <v-list>
           <template v-for="item in items">
             <v-list-item :key="item.text" href="" :to="item.path">
               <v-list-item-action>
                 <v-icon>{{ item.icon }}</v-icon>
               </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>
-                  {{ item.text }}
-                </v-list-item-title>
-              </v-list-item-content>
+
+              <v-list-item-title>
+                {{ item.text }}
+              </v-list-item-title>
             </v-list-item>
           </template>
         </v-list>
@@ -43,9 +53,10 @@ export default {
   },
   data: () => ({
     dialog: false,
+    displayMenu: false,
     drawer: null,
     items: [
-      { icon: 'not_listed_location', text: 'C où?', path: '/where' },
+      { icon: 'not_listed_location', text: 'Lieu', path: '/where' },
       { icon: 'restaurant', text: 'Menus', path: '/menus' },
       {
         icon: 'local_grocery_store',
